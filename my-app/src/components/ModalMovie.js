@@ -10,6 +10,7 @@ function ModalMovie(props) {
  const data = {
 
     title: props.name,
+    release_date:props.date,
     poster_path: props.img,
  comments: savedData,
 };

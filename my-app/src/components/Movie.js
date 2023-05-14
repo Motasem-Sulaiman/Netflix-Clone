@@ -34,6 +34,7 @@ function Movie(props) {
         handleclose={handleClose}
         name={props.movie.title}
         img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${props.movie.poster_path}`}
+        date={props.movie.release_date}
       />
     </>
   );

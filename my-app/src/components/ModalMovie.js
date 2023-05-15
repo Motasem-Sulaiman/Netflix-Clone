@@ -6,7 +6,7 @@ import { useState } from "react";
 function ModalMovie(props) {
   const [savedData,setSavedData]=useState("");
   async function addToDataBase(){
- const url=`http://localhost:3001/addMovie`
+ const url=`${process.env.REACT_APP_URL}addMovie` 
  const data = {
 
     title: props.name,

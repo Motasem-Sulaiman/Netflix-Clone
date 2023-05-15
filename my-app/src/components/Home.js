@@ -5,7 +5,7 @@ import MovieList from "./MovieList";
 function Home() {
   const [movieData, setMovieData] = useState([]);
   const sendReq = async () => {
-    const serverUrl = `http://localhost:3001/trending`;
+    const serverUrl = `${process.env.REACT_APP_URL}trending`;
     const result = await axios.get(serverUrl);
     setMovieData(result.data);
   };

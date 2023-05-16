@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 import axios from "axios";
+
 import { useState } from "react";
 function ModalMovie(props) {
   const [savedData,setSavedData]=useState("");
@@ -9,15 +10,16 @@ function ModalMovie(props) {
  const url=`${process.env.REACT_APP_URL}addMovie` 
  const data = {
 
-    title: props.name,
+    title:props.name,
     release_date:props.date,
     poster_path: props.img,
- comments: savedData,
+    comments: savedData,
 };
 
  await axios.post(url,data)
 
 setSavedData("")
+props.handleclose()
 
   }
   const handleCommentChange = (e) => {
@@ -34,7 +36,7 @@ setSavedData("")
           <br></br>
           <br></br>
           <label>Add Comment</label>
-          <input type="text" value={savedData} name="comments" onChange={handleCommentChange}/>
+          <input type="text" onChange={handleCommentChange}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={props.handleclose}>
@@ -43,7 +45,9 @@ setSavedData("")
           <Button variant="primary" onClick={addToDataBase}>Add to the favorite</Button>
         </Modal.Footer>
       </Modal>
+    
     </>
+    
   );
 }
 

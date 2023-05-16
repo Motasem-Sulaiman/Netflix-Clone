@@ -16,12 +16,12 @@ function Movie(props) {
 
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" ,marginLeft: '600px'}} >
         <Card.Img
           variant="top"
           src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${props.movie.poster_path}`}
         />
-        <Card.Body>
+        <Card.Body  >
           <Card.Title>{props.movie.title}</Card.Title>
           <Card.Text></Card.Text>
           <Button variant="primary" onClick={handleShow}>
